@@ -1,0 +1,45 @@
+[
+  {
+    "title": "UPCOMING EVENTS:",
+    "upcomingEvent": "#SUGCONference PH 2024",
+    "tag": "March 2024 - Coming Soon!",
+    "location": "Cebu City, Philippines",
+    "titleLabel": "CHECKOUT OTHER SITECORE EVENTS",
+    "waitlistLabel": "Join the Email Waitlist for Latest Updates!",
+    "bottomDesc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "events": [
+      {
+        "srcTitle": "/svgs/sugcon/sugcon.svg",
+        "location": "N AMERICA",
+        "year": 2023,
+        "locSrc": "/icons/flag-US.png",
+        "src": "/svgs/sugcon-logo.svg",
+        "link": "https://na.sugcon.events/"
+      },
+      {
+        "srcTitle": "/svgs/sugcon/sugcon.svg",
+        "location": "ANZ",
+        "year": 2023,
+        "locSrc": "/icons/flag-ANZ.png",
+        "src": "/svgs/sugcon-logo.svg",
+        "link": "https://anz.sugcon.events/"
+      },
+      {
+        "srcTitle": "/svgs/sugcon/sugcon.svg",
+        "location": "EUROPE",
+        "year": 2023,
+        "locSrc": "/icons/flag-EUROPE.png",
+        "src": "/svgs/sugcon-logo.svg",
+        "link": "https://europe.sugcon.events/"
+      },
+      {
+        "srcTitle": "/svgs/sugcon/sugcon.svg",
+        "location": "INDIA",
+        "year": 2023,
+        "locSrc": "/icons/flag-INDIA.webp",
+        "src": "/svgs/sugcon-logo.svg",
+        "link": "https://india.sugcon.events/"
+      }
+    ]
+  }
+]

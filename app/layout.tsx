@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 import { Poppins } from "next/font/google";
+import Footer from "@/components/footer";
+import { getFooterDataContent } from "@/actions/data-content";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -13,11 +15,12 @@ export const metadata: Metadata = {
   description: "Sugcon PH",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const footerDataContent = await getFooterDataContent();
   return (
     <html lang="en">
       <head>
@@ -48,10 +51,14 @@ export default function RootLayout({
     `,
           }}
         ></script>
-
       </head>
-      <body className={`${poppins.className} flex flex-col items-center`}>
+      <body
+        className={`${poppins.className} flex flex-col items-center select-none`}
+      >
         {children}
+        <div className="bg-white w-full flex justify-center">
+          <Footer data={footerDataContent} />
+        </div>
       </body>
     </html>
   );

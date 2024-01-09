@@ -1,0 +1,26 @@
+[
+  {
+    "logo": "/imgs/sugcon-ph.png",
+    "text": "AN EVENT FROM THE COMMUNITY FOR THE COMMUNITY",
+    "partners": [
+      {
+        "label": "POWERED BY",
+        "src": "/svgs/sitecore.svg",
+        "width": 207,
+        "height": 44
+      },
+      {
+        "label": "",
+        "src": "/imgs/jairosoft-logo.png",
+        "width": 138,
+        "height": 43
+      },
+      {
+        "label": "",
+        "src": "/svgs/sugcon.svg",
+        "width": 48,
+        "height": 73
+      }
+    ]
+  }
+]

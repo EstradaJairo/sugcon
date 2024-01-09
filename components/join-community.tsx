@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { Poppins } from "next/font/google";
+import { JoinCommunity } from "@/types";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -12,7 +13,11 @@ interface ExtendedWindow extends Window {
   fd: (type: string, options: any) => void;
 }
 
-export default function JoinCommunity() {
+interface JoinCommunityProps {
+  data: JoinCommunity[];
+}
+
+export default function JoinCommunity({ data }: JoinCommunityProps) {
   useEffect(() => {
     (window as unknown as ExtendedWindow).fd("form", {
       formId: "65829902638b73c3f4529801",
@@ -20,34 +25,25 @@ export default function JoinCommunity() {
     });
   }, []);
 
-  const dataContent = [
-    {
-      src: "/imgs/sugcon-conference.jpg",
-      titleLabel: "Join the #SUGCON PH Community!",
-      titleDesc:
-        "Sign up with your email address to receive all news and updates about Sitecore!",
-      tag: "Use the hashtag #SUGCONferencePH2024 and tag us! @SUGCONPH",
-      date: "MARCH 2024",
-    },
-  ];
-
   return (
     <>
-      <div className="w-full px-[50px] py-[10px]">
-        <div className="px-[142px] py-[14px] bg-[#D91E27] flex flex-col items-center gap-[7px]">
-          <p className={`text-[50px] ${poppins.className}`}>
-            {dataContent[0].titleLabel}
+      <div className="w-full px-[20px] md:px-[50px] py-[10px]">
+        <div className="px-[50px] md:px-[142px] py-[14px] bg-[#D91E27] flex flex-col items-center gap-[7px] justify-center text-center">
+          <p className={`text-[30px] md:text-[50px] ${poppins.className}`}>
+            {data[0].titleLabel}
           </p>
-          <p className="max-w-[656px] w-full text-[18px] font-semibold tracking-[4px] text-center">
-            {dataContent[0].titleDesc}
+          <p className="max-w-[656px] w-full text-[12px] md:text-[18px] font-semibold tracking-[4px] text-center">
+            {data[0].titleDesc}
           </p>
         </div>
         <div id="fd-form-65829902638b73c3f4529801"></div>
         <div className="bg-[#757575] rounded-[36px] w-full h-[1px]"></div>
-        <div className="py-[30px] flex justify-between items-center text-[15px]">
-          <p className="text-[#BFBFBF]">{dataContent[0].tag}</p>
-          <p className="bg-[#D91E27] px-[31px] py-[6px]">
-            {dataContent[0].date}
+        <div className="py-[30px] w-full flex flex-col gap-[20px] md:flex-row justify-between items-center text-[15px]">
+          <p className="text-[#BFBFBF] text-center sm:text-start">
+            {data[0].tag}
+          </p>
+          <p className="bg-[#D91E27] px-[31px] py-[6px] w-[200px] h-[35px] text-center">
+            {data[0].date}
           </p>
         </div>
       </div>
