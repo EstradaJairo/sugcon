@@ -12,7 +12,8 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "SUGCON PH",
-  description: "Sugcon PH",
+  description:
+    "SUGCON PH (Sitecore User Group Philippines | Elevating Digital Experiences with AI and Web Development in ASIA",
 };
 
 export default async function RootLayout({
