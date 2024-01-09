@@ -1,11 +1,11 @@
-import {
-  getBannerDataContent,
-  getEventsDataContent,
-  getJoinCommunityDataContent,
-  getNavbarDataContent,
-  getSugconCommunityDataContent,
-  getSugconDataContent,
-} from "@/actions/data-content";
+// import {
+//   getBannerDataContent,
+//   getEventsDataContent,
+//   getJoinCommunityDataContent,
+//   getNavbarDataContent,
+//   getSugconCommunityDataContent,
+//   getSugconDataContent,
+// } from "@/actions/data-content";
 import Banner from "@/components/banner";
 import Events from "@/components/events";
 import JoinCommunity from "@/components/join-community";
