@@ -14,7 +14,9 @@ const poppins = Poppins({
 export default function Banner({ data }: BannerProps) {
   return (
     <>
-      <div className="w-full bg-[url('/imgs/sugcon-conference.jpg')] bg-center">
+      <div
+        className={`w-full backgroundImage bg-[${data[0].src}] bg-center bg-contain`}
+      >
         <div className="background z-[3] pt-[100px] px-[20px] sm:px-[50px] pb-[20px] flex flex-col gap-[35px] justify-between">
           <div className="flex flex-col gap-[35px]">
             <div

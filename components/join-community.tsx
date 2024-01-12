@@ -27,7 +27,7 @@ export default function JoinCommunity({ data }: JoinCommunityProps) {
 
   return (
     <>
-      <div className="w-full px-[20px] md:px-[50px] py-[10px]">
+      <div className="w-full px-[20px] md:px-[50px] py-[50px]">
         <div className="px-[50px] md:px-[142px] py-[14px] bg-[#D91E27] flex flex-col items-center gap-[7px] justify-center text-center">
           <p className={`text-[30px] md:text-[50px] ${poppins.className}`}>
             {data[0].titleLabel}

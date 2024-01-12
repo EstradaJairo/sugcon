@@ -11,3 +11,16 @@ body {
   background: linear-gradient(90deg, #000 0%, rgba(78, 78, 78, 0) 347.86%);
 }
 
+.custom-duration {
+  transition-duration: 1000ms;
+}
+
+.backgroundImage {
+  background-image: url("/imgs/banner.jpg");
+  background-size: contain;
+  width: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}

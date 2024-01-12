@@ -14,7 +14,10 @@ interface SugconProps {
 export default function Sugcon({ data }: SugconProps) {
   return (
     <>
-      <div className="w-full px-[37px] py-[30px] bg-[#212529] flex flex-col  xl:flex-row xl:justify-between gap-[20px]">
+      <div
+        id="about"
+        className="w-full px-[37px] py-[30px] bg-[#212529] flex flex-col  xl:flex-row xl:justify-between gap-[20px]"
+      >
         <div className="xl:max-w-[573px] w-full flex flex-col gap-[14px]">
           <div className="flex flex-col gap-[29px]">
             <p

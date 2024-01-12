@@ -52,12 +52,20 @@ export default function Events({ data }: EventsProps) {
           <p className={`text-[25px] sm:text-[40px] ${poppins.className}`}>
             {data[0].title}
           </p>
+
           <p
             className={`px-[22px] py-[5px] bg-[#D91E27] text-[16px] sm:text-[20px] ${poppins.className}`}
           >
             {data[0].upcomingEvent}
           </p>
         </div>
+        <Image
+          src={data[0].eventSrc}
+          alt={""}
+          width={1182}
+          height={400}
+          className="object-cover object-center  w-full h-[400px]"
+        />
         <div className="bg-[#212529] text-[16px] flex flex-col lg:flex-row items-center justify-center gap-[25px] w-full p-[15px]">
           <div className="flex flex-col sm:flex-row items-center gap-[11px]">
             <p>{data[0].tag}</p>
@@ -102,7 +110,7 @@ export default function Events({ data }: EventsProps) {
             </span>
           ))}
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-[12px] xl:grid-cols-4 justify-center items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-[12px] xl:grid-cols-4 justify-center items-center mb-[121px]">
           {data[0].events.map((event, index) => (
             <div className="flex items-center gap-[12px]" key={index}>
               <div
@@ -142,9 +150,9 @@ export default function Events({ data }: EventsProps) {
             </div>
           ))}
         </div>
-        <p className="text-[19px] text-center max-w-[842px] w-full mb-[121px]">
+        {/* <p className="text-[19px] text-center max-w-[842px] w-full mb-[121px]">
           {data[0].bottomDesc}
-        </p>
+        </p> */}
       </div>
     </>
   );

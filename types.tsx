@@ -21,6 +21,12 @@ export interface Navbar {
   partners: Partners[];
 }
 
+export interface Navigation {
+  id: number;
+  title: string;
+  link: string;
+}
+
 export interface Banner {
   id: number;
   src: string;
@@ -62,6 +68,7 @@ export interface SugconCommunity {
 export interface Events {
   id: number;
   title: string;
+  eventSrc: string;
   upcomingEvent: string;
   tag: string;
   location: string;

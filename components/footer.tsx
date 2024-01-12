@@ -35,13 +35,18 @@ export default function Footer({ data }: FooterProps) {
       <div className="py-[53px] px-[53px] flex flex-col md:flex-row md:items-center md:justify-between max-w-[1440px] w-full h-[300px] md:h-[253px] gap-[30px]">
         <Image src={data[0].srcLogo} alt={""} width={298.735} height={86.749} />
         <div
-          className={`${inter.className} flex flex-col gap-[30px] md:gap-[0px] items-end font-semibold text-[#212223]`}
+          className={`${inter.className} flex flex-col gap-[30px] md:gap-[10px] items-end font-semibold text-[#212223]`}
         >
           <div
             onClick={() => contactModal(true)}
-            className={`flex gap-[11px] items-center lg:cursor-pointer`}
+            className={`flex gap-[11px] items-center lg:cursor-pointer text-white bg-[#D91E27] py-[15px] px-[30px] rounded-[10px]`}
           >
-            <Image src={"/icons/contact.png"} alt={""} width={36} height={36} />
+            <Image
+              src={"/icons/contact-white.png"}
+              alt={""}
+              width={36}
+              height={36}
+            />
             <p>{data[0].label}</p>
           </div>
           <p className="text-center md:text-start w-full">

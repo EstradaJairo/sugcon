@@ -6,9 +6,11 @@ import {
   SugconCommunity,
   Events,
   Footer,
+  Navigation,
 } from "@/types";
 
 const navbarURL = `${process.env.NEXT_PUBLIC_API_URL}/navbar`;
+const navigationURL = `http://localhost:3001/api/navigation`;
 const bannerURL = `${process.env.NEXT_PUBLIC_API_URL}/banner`;
 const joinCommunityURL = `${process.env.NEXT_PUBLIC_API_URL}/join-community`;
 const sugconURL = `${process.env.NEXT_PUBLIC_API_URL}/sugcon`;
@@ -18,6 +20,14 @@ const footerURL = `${process.env.NEXT_PUBLIC_API_URL}/footer`;
 
 export const getNavbarDataContent = async (): Promise<Navbar[]> => {
   const res = await fetch(`${navbarURL}`, {
+    next: { revalidate: 3600 },
+  });
+  const data = await res.json();
+  return data;
+};
+
+export const getNavigationDataContent = async (): Promise<Navigation[]> => {
+  const res = await fetch(`${navigationURL}`, {
     next: { revalidate: 3600 },
   });
   const data = await res.json();
