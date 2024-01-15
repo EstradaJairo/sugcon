@@ -3,7 +3,7 @@ import "./globals.css";
 
 import { Poppins } from "next/font/google";
 import Footer from "@/components/footer";
-import { getFooterDataContent } from "@/actions/data-content";
+// import { getFooterDataContent } from "@/actions/data-content";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -21,7 +21,7 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const footerDataContent = await getFooterDataContent();
+  // const footerDataContent = await getFooterDataContent();
   return (
     <html lang="en">
       <head>
@@ -59,7 +59,7 @@ export default async function RootLayout({
         {children}
         <div id="contact"></div>
         <div className="bg-white w-full flex justify-center">
-          <Footer data={footerDataContent} />
+          {/* <Footer data={footerDataContent} /> */}
         </div>
       </body>
     </html>

@@ -15,7 +15,7 @@ export default function Banner({ data }: BannerProps) {
   return (
     <>
       <div
-        className={`w-full backgroundImage bg-[${data[0].src}] bg-center bg-contain`}
+        className={`w-full backgroundImage bg-no-repeat bg-center lg:bg-contain lg:bg-repeat-x`}
       >
         <div className="background z-[3] pt-[100px] px-[20px] sm:px-[50px] pb-[20px] flex flex-col gap-[35px] justify-between">
           <div className="flex flex-col gap-[35px]">
