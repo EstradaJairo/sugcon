@@ -1,8 +1,8 @@
 "use client";
 
 import { Poppins } from "next/font/google";
-import { useState } from "react";
-import { X } from "lucide-react";
+// import { useState } from "react";
+// import { X } from "lucide-react";
 import { SugconCommunity } from "@/types";
 
 const poppins = Poppins({
@@ -10,32 +10,35 @@ const poppins = Poppins({
   weight: "700",
 });
 
-interface ExtendedWindow extends Window {
-  fd: (type: string, options: any) => void;
-}
+// interface ExtendedWindow extends Window {
+//   fd: (type: string, options: any) => void;
+// }
 
 interface SugconCommunityProps {
   data: SugconCommunity[];
 }
 
 export default function SugconCommunity({ data }: SugconCommunityProps) {
-  const [openSpeakerModal, setOpenSpeakerModal] = useState(false);
-  const [openSponsorModal, setOpenSponsorModal] = useState(false);
+  // const [openSpeakerModal, setOpenSpeakerModal] = useState(false);
+  // const [openSponsorModal, setOpenSponsorModal] = useState(false);
 
-  const speakerModal = (isOpen: boolean) => {
-    setOpenSpeakerModal(isOpen);
-    (window as unknown as ExtendedWindow).fd("form", {
-      formId: "6585391ed438be5a628a8a9d",
-      containerEl: "#fd-form-6585391ed438be5a628a8a9d",
-    });
-  };
+  // const speakerModal = (isOpen: boolean) => {
+  //   setOpenSpeakerModal(isOpen);
+  //   (window as unknown as ExtendedWindow).fd("form", {
+  //     formId: "6585391ed438be5a628a8a9d",
+  //     containerEl: "#fd-form-6585391ed438be5a628a8a9d",
+  //   });
+  // };
 
-  const sponsorModal = (isOpen: boolean) => {
-    setOpenSponsorModal(isOpen);
-    (window as unknown as ExtendedWindow).fd("form", {
-      formId: "65853aa7c24bb9aa39c2888c",
-      containerEl: "#fd-form-65853aa7c24bb9aa39c2888c",
-    });
+  // const sponsorModal = (isOpen: boolean) => {
+  //   setOpenSponsorModal(isOpen);
+  //   (window as unknown as ExtendedWindow).fd("form", {
+  //     formId: "65853aa7c24bb9aa39c2888c",
+  //     containerEl: "#fd-form-65853aa7c24bb9aa39c2888c",
+  //   });
+  // };
+  const onNavigate = (url: string) => {
+    return window.open(url, "_blank");
   };
 
   return (
@@ -74,7 +77,7 @@ export default function SugconCommunity({ data }: SugconCommunityProps) {
           <div className="flex flex-col sm:flex-row gap-[10px] sm:gap-[26px] text-center">
             <div
               onClick={() => {
-                speakerModal(true);
+                onNavigate(data[0].speakerURL);
               }}
               className="bg-[#212529] text-[12px] sm:text-[18px] font-bold px-[23px] py-[10px] rounded-[5px] lg:cursor-pointer"
             >
@@ -82,7 +85,7 @@ export default function SugconCommunity({ data }: SugconCommunityProps) {
             </div>
             <div
               onClick={() => {
-                sponsorModal(true);
+                onNavigate(data[0].sponsorURL);
               }}
               className="bg-[#212529] text-[12px] sm:text-[18px] font-bold px-[23px] py-[10px] rounded-[5px] lg:cursor-pointer"
             >
@@ -92,7 +95,7 @@ export default function SugconCommunity({ data }: SugconCommunityProps) {
         </div>
       </div>
 
-      <div
+      {/* <div
         className={`${
           openSpeakerModal ? "flex" : "hidden"
         } fixed px-[30px] inset-0 z-50 flex items-center justify-center backdrop-blur-[5px] `}
@@ -124,7 +127,7 @@ export default function SugconCommunity({ data }: SugconCommunityProps) {
             }`}
           />
         </div>
-      </div>
+      </div> */}
     </>
   );
 }
