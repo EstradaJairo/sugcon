@@ -6,6 +6,7 @@ import {} from "next/font/google";
 import { useState } from "react";
 import { X } from "lucide-react";
 import { Events } from "@/types";
+import SendEmailForm from "./send-email-form";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -64,7 +65,7 @@ export default function Events({ data }: EventsProps) {
           alt={""}
           width={1182}
           height={400}
-          className="object-cover object-center  w-full h-[400px]"
+          className="object-cover object-center w-full h-[400px]"
         />
         <div className="bg-[#212529] text-[16px] flex flex-col lg:flex-row items-center justify-center gap-[25px] w-full p-[15px]">
           <div className="flex flex-col sm:flex-row items-center gap-[11px]">
@@ -88,7 +89,27 @@ export default function Events({ data }: EventsProps) {
           openModal ? "flex" : "hidden"
         } fixed px-[30px] inset-0 z-50 flex items-center justify-center backdrop-blur-[5px] `}
       >
-        <div className="relative" id="fd-form-6594bf35355de16f50f5dade">
+        {/* <div className="relative" id="fd-form-6594bf35355de16f50f5dade">
+          <X
+            onClick={() => setOpenModal(false)}
+            width={20}
+            height={20}
+            className={`absolute z-[1]  right-[20px] top-[20px] lg:cursor-pointer ${
+              openModal ? "flex" : "hidden"
+            }`}
+          />
+        </div> */}
+        <div className="relative flex flex-col items-center justify-center bg-[#f93e31] p-[30px] gap-[30px]">
+          <p className="text-[37px] font-bold">#SUGCONference PH 2024</p>
+          <p className="text-[16px]">
+            Sign up with your email address to receive all news and updates
+            about the upcoming #SUCONference PH 2024
+          </p>
+          <SendEmailForm
+            inputCustomClassName="text-[13px] py-[12px] px-[20px] bg-transparent w-full h-[46px] max-w-[189px] border border-white placeholder:text-white"
+            btnLabel="Sign Up"
+            btnCustomClassName="bg-black text-[13px] py-[12px] px-[20px]"
+          />
           <X
             onClick={() => setOpenModal(false)}
             width={20}

@@ -14,7 +14,6 @@ import Navbar from "@/components/navbar";
 import Navigation from "@/components/navigation";
 import Sugcon from "@/components/sugcon";
 import SugconCommunity from "@/components/sugcon-community";
-import YourComponent from "@/components/test";
 
 export default async function Home() {
   const navbarDataContent = await getNavbarDataContent();
@@ -26,7 +25,7 @@ export default async function Home() {
   const eventsDataContent = await getEventsDataContent();
 
   return (
-    <main className="flex flex-col items-center justify-center pt-0 pb-[20px] px-[20px] lg:pb-[55px] lg:px-[55px] max-w-[1440px] w-full overflow-hidden">
+    <main className="flex flex-col items-center justify-center pt-0 pb-[20px] px-[20px] lg:pb-[55px] lg:px-[55px] max-w-[1920px] w-full overflow-hidden">
       <Navbar data={navbarDataContent} />
       <div className="bg-[#D91E27] w-full h-[5px]"></div>
       <Navigation data={navigationDataContent} />

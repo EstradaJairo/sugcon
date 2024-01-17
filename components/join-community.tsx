@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { Poppins } from "next/font/google";
 import { JoinCommunity } from "@/types";
+import SendEmailForm from "./send-email-form";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -36,7 +37,13 @@ export default function JoinCommunity({ data }: JoinCommunityProps) {
             {data[0].titleDesc}
           </p>
         </div>
-        <div id="fd-form-65829902638b73c3f4529801"></div>
+        <div className="p-[30px]">
+          <SendEmailForm
+            inputCustomClassName="text-[13px] py-[12px] px-[20px] bg-[#212529] w-full h-[46px] max-w-[189px]  rounded-[10px] placeholder:text-white"
+            btnLabel="Subscribe"
+            btnCustomClassName="rounded-[10px] bg-[#EB2020] text-[13px] py-[12px] px-[20px]"
+          />
+        </div>
         <div className="bg-[#757575] rounded-[36px] w-full h-[1px]"></div>
         <div className="py-[30px] w-full flex flex-col gap-[20px] md:flex-row justify-between items-center text-[15px]">
           <p className="text-[#BFBFBF] text-center sm:text-start">

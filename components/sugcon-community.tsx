@@ -1,8 +1,8 @@
 "use client";
 
 import { Poppins } from "next/font/google";
-// import { useState } from "react";
-// import { X } from "lucide-react";
+import { useState } from "react";
+import { X } from "lucide-react";
 import { SugconCommunity } from "@/types";
 
 const poppins = Poppins({
@@ -19,8 +19,8 @@ interface SugconCommunityProps {
 }
 
 export default function SugconCommunity({ data }: SugconCommunityProps) {
-  // const [openSpeakerModal, setOpenSpeakerModal] = useState(false);
-  // const [openSponsorModal, setOpenSponsorModal] = useState(false);
+  const [openSpeakerModal, setOpenSpeakerModal] = useState(false);
+  const [openSponsorModal, setOpenSponsorModal] = useState(false);
 
   // const speakerModal = (isOpen: boolean) => {
   //   setOpenSpeakerModal(isOpen);
@@ -77,7 +77,8 @@ export default function SugconCommunity({ data }: SugconCommunityProps) {
           <div className="flex flex-col sm:flex-row gap-[10px] sm:gap-[26px] text-center">
             <div
               onClick={() => {
-                onNavigate(data[0].speakerURL);
+                setOpenSpeakerModal(true);
+                // onNavigate(data[0].speakerURL);
               }}
               className="bg-[#212529] text-[12px] sm:text-[18px] font-bold px-[23px] py-[10px] rounded-[5px] lg:cursor-pointer"
             >
@@ -85,7 +86,8 @@ export default function SugconCommunity({ data }: SugconCommunityProps) {
             </div>
             <div
               onClick={() => {
-                onNavigate(data[0].sponsorURL);
+                setOpenSponsorModal(true);
+                // onNavigate(data[0].sponsorURL);
               }}
               className="bg-[#212529] text-[12px] sm:text-[18px] font-bold px-[23px] py-[10px] rounded-[5px] lg:cursor-pointer"
             >
@@ -95,12 +97,18 @@ export default function SugconCommunity({ data }: SugconCommunityProps) {
         </div>
       </div>
 
-      {/* <div
+      <div
         className={`${
           openSpeakerModal ? "flex" : "hidden"
         } fixed px-[30px] inset-0 z-50 flex items-center justify-center backdrop-blur-[5px] `}
       >
-        <div className="relative" id="fd-form-6585391ed438be5a628a8a9d">
+        <div className="w-[600px] h-[700px] px-[20px] pt-[50px] pb-[20px] bg-[#292121] rounded-[20px] relative">
+          <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSeJORKrfahYnySbl2pe9LXZ-UhLQsR85aQXdsXcjbqn6ud16w/viewform"
+            className="w-full h-full rounded-[20px]"
+          >
+            Loading…
+          </iframe>
           <X
             onClick={() => setOpenSpeakerModal(false)}
             width={20}
@@ -113,6 +121,29 @@ export default function SugconCommunity({ data }: SugconCommunityProps) {
       </div>
 
       <div
+        className={`${
+          openSponsorModal ? "flex" : "hidden"
+        } fixed px-[30px] inset-0 z-50 flex items-center justify-center backdrop-blur-[5px] `}
+      >
+        <div className="w-[600px] h-[700px] px-[20px] pt-[50px] pb-[20px] bg-[#212529] rounded-[20px] relative">
+          <iframe
+            src="https://docs.google.com/forms/d/e/1FAIpQLSdeEX9Dd-I6EhMGiYqQJC7K_p5sXNA208o7Dk28WWpzRn9LyA/viewform"
+            className="w-full h-full rounded-[20px]"
+          >
+            Loading…
+          </iframe>
+          <X
+            onClick={() => setOpenSponsorModal(false)}
+            width={20}
+            height={20}
+            className={`absolute z-[1]  right-[20px] top-[20px] lg:cursor-pointer ${
+              openSponsorModal ? "flex" : "hidden"
+            }`}
+          />
+        </div>
+      </div>
+
+      {/* <div
         className={`${
           openSponsorModal ? "flex" : "hidden"
         } fixed px-[30px] inset-0 z-50 flex items-center justify-center backdrop-blur-[5px] `}
