@@ -39,9 +39,9 @@ export default function JoinCommunity({ data }: JoinCommunityProps) {
         </div>
         <div className="p-[30px]">
           <SendEmailForm
-            inputCustomClassName="text-[13px] py-[12px] px-[20px] bg-[#212529] w-full h-[46px] max-w-[189px]  rounded-[10px] placeholder:text-white"
+            inputCustomClassName="text-[13px] py-[12px] px-[20px] bg-[#212529] h-[42px] w-full lg:w-[200px] 2xl:w-[269px] rounded-[4px] placeholder:text-white"
             btnLabel="Subscribe"
-            btnCustomClassName="rounded-[10px] bg-[#EB2020] text-[13px] py-[12px] px-[20px]"
+            btnCustomClassName="rounded-[4px] bg-[#EB2020] text-[16px] w-[123px] h-[42px] flex items-center justify-center font-bold py-[9px] px-[22px]"
           />
         </div>
         <div className="bg-[#757575] rounded-[36px] w-full h-[1px]"></div>

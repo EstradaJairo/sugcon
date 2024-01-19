@@ -17,7 +17,7 @@ interface SendEmailFormProps {
   btnCustomClassName: string;
 }
 
-export default function SendEmailForm({
+export default function ContactUsForm({
   inputCustomClassName,
   btnLabel,
   btnCustomClassName,
@@ -27,14 +27,14 @@ export default function SendEmailForm({
   const [toastMessage, setToastMessage] = useState("");
   const [showToast, setShowToast] = useState(false);
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
+    name: "",
+    message: "",
     emailAddress: "",
   });
 
   const [errors, setErrors] = useState({
-    firstName: false,
-    lastName: false,
+    name: false,
+    message: false,
     emailAddress: false,
   });
 
@@ -53,8 +53,8 @@ export default function SendEmailForm({
 
   const handleSendEmail = () => {
     let newErrors = {
-      firstName: false,
-      lastName: false,
+      name: false,
+      message: false,
       emailAddress: false,
     };
     let hasError = false;
@@ -77,17 +77,13 @@ export default function SendEmailForm({
     e.preventDefault();
 
     const data = {
-      firstName: String(e.target.firstName.value),
-      lastName: String(e.target.lastName.value),
+      name: String(e.target.name.value),
+      message: String(e.target.message.value),
       emailAddress: String(e.target.emailAddress.value),
     };
 
-    if (
-      data.firstName != "" &&
-      data.lastName != "" &&
-      data.emailAddress != ""
-    ) {
-      const response = await fetch("/api/send-email", {
+    if (data.name != "" && data.message != "" && data.emailAddress != "") {
+      const response = await fetch("/api/send-email-contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -97,8 +93,8 @@ export default function SendEmailForm({
 
       if (response.ok) {
         formData.emailAddress = "";
-        formData.firstName = "";
-        formData.lastName = "";
+        formData.name = "";
+        formData.message = "";
         setIsLoading(false);
         setToastMessage("Email Sent Successfully.");
         setShowToast(true);
@@ -117,56 +113,28 @@ export default function SendEmailForm({
     <>
       <form
         onSubmit={handleSubmit}
-        className="flex w-full flex-col lg:flex-row gap-[20px] items-center justify-center"
+        className="flex w-full flex-col lg:flex-row gap-[20px] items-center lg:items-start justify-center"
       >
-        <div className="flex w-full lg:w-fit flex-col gap-[5px] h-[82px]">
-          <label className="text-[10px]" htmlFor="firstName">
-            First Name
-          </label>
+        <div className="flex w-full lg:w-fit flex-col items-start gap-[5px] h-[62px]">
           <input
             type="text"
-            placeholder="First Name"
+            placeholder="Name"
             className={`${inputCustomClassName} ${
-              errors.firstName ? "border border-red-700" : "border border-white"
+              errors.name ? "border border-red-700" : "border border-white"
             }`}
             autoComplete="off"
-            name="firstName"
-            value={formData.firstName}
+            name="name"
+            value={formData.name}
             onChange={handleInputChange}
           />
-          {errors.firstName && (
-            <label className="text-[10px] text-[#FF5050]" htmlFor="firstName">
-              Please enter your first name.
+          {errors.name && (
+            <label className="text-[10px] text-[#FF5050]" htmlFor="name">
+              Please enter your name.
             </label>
           )}
         </div>
 
-        <div className="flex w-full lg:w-fit flex-col gap-[5px] h-[82px]">
-          <label className="text-[10px]" htmlFor="lastName">
-            Last Name
-          </label>
-          <input
-            type="text"
-            placeholder="Last Name"
-            className={`${inputCustomClassName} ${
-              errors.lastName ? "border border-red-700" : "border border-white"
-            }`}
-            autoComplete="off"
-            name="lastName"
-            value={formData.lastName}
-            onChange={handleInputChange}
-          />
-          {errors.lastName && (
-            <label className="text-[10px] text-[#FF5050]" htmlFor="lastName">
-              Please enter your last name.
-            </label>
-          )}
-        </div>
-
-        <div className="flex w-full lg:w-fit flex-col gap-[5px] h-[82px]">
-          <label className="text-[10px]" htmlFor="emailAddress">
-            Email Address
-          </label>
+        <div className="flex w-full lg:w-fit flex-col items-start gap-[5px] h-[62px]">
           <input
             type="text"
             placeholder="Email Address"
@@ -198,13 +166,32 @@ export default function SendEmailForm({
           )}
         </div>
 
+        <div className="flex w-full lg:w-fit flex-col items-start gap-[5px] h-[62px]">
+          <input
+            type="text"
+            placeholder="Write Message"
+            className={`${inputCustomClassName} ${
+              errors.message ? "border border-red-700" : "border border-white"
+            }`}
+            autoComplete="off"
+            name="message"
+            value={formData.message}
+            onChange={handleInputChange}
+          />
+          {errors.message && (
+            <label className="text-[10px] text-[#FF5050]" htmlFor="message">
+              Please write a message.
+            </label>
+          )}
+        </div>
+
         <button
           type="submit"
           onClick={handleSendEmail}
           className={btnCustomClassName}
         >
           {isLoading ? (
-            <Loader className="animate-spin h-[20px] w-[20px]" />
+            <Loader className="animate-spin h-[20px] w-[20px] text-black" />
           ) : (
             btnLabel
           )}

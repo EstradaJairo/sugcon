@@ -12,7 +12,7 @@ body {
 }
 
 .background {
-  background: linear-gradient(90deg, #000 0%, rgba(78, 78, 78, 0) 347.86%);
+  background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%);
 }
 
 .custom-duration {
@@ -21,6 +21,9 @@ body {
 
 .backgroundImage {
   background-image: url("/imgs/banner.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .hamburger {
@@ -81,4 +84,8 @@ body {
   border-radius: 5px;
   transition: all 0.5s ease-in-out;
   transform: rotate(-45deg);
+}
+
+.helvetica {
+  font-family: Arial, Helvetica, sans-serif;
 }

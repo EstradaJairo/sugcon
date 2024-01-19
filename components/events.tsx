@@ -106,7 +106,7 @@ export default function Events({ data }: EventsProps) {
             about the upcoming #SUCONference PH 2024
           </p>
           <SendEmailForm
-            inputCustomClassName="text-[13px] py-[12px] px-[20px] bg-transparent w-full h-[46px] max-w-[189px] border border-white placeholder:text-white"
+            inputCustomClassName="text-[13px] py-[12px] px-[20px] bg-transparent h-[46px] w-full lg:w-[200px] 2xl:w-[269px] border border-white placeholder:text-white"
             btnLabel="Sign Up"
             btnCustomClassName="bg-black text-[13px] py-[12px] px-[20px]"
           />

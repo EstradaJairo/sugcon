@@ -7,7 +7,7 @@ export async function POST(req: NextRequest, res: any) {
   try {
     const body = await req.json();
 
-    const { firstName, lastName, emailAddress } = body;
+    const { name, message, emailAddress } = body;
 
     const user = process.env.user;
 
@@ -75,7 +75,7 @@ export async function POST(req: NextRequest, res: any) {
         <td align="center">
           <div style="padding: 50px; font-size: 20px">
             <p style="text-align: start; padding-left: 50px">
-              Greetings ${firstName}!
+              Greetings ${name}!
             </p>
             <p
               style="
@@ -280,7 +280,7 @@ export async function POST(req: NextRequest, res: any) {
           <div style="padding: 50px; font-size: 20px; text-align: center">
             <div style="font-size: 20px; margin-bottom: 50px">______</div>
             <p style="font-size: 40px; font-weight: bold">
-              Cheers to you, ${firstName}
+              Cheers to you, ${name}
             </p>
             <p style="font-size: 20px">
               With love from the whole happy SUGCON PH Community!
@@ -303,7 +303,8 @@ export async function POST(req: NextRequest, res: any) {
       <div style="font-size: 24px; font-weight: bold; margin-bottom: 10px;">Hello and good day!</div>
       <br></br>
       <div style="font-size: 18px; font-weight: bold; margin-bottom: 10px;">Customer's Information:</div>
-      <div style="margin-bottom: 5px;">Name: ${firstName} ${lastName}</div>
+      <div style="margin-bottom: 5px;">Name: ${name}</div>
+      <div style="margin-bottom: 5px;">Message: ${message}</div>
       <div style="margin-bottom: 5px;">Email: ${emailAddress}</div>
       </div>
       `,

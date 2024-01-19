@@ -53,8 +53,8 @@ export default function Navigation({ data }: NavigationProps) {
       </div>
 
       <div
-        className={`fixed z-[100] top-0 w-full transition-transform transform duration-500 ease-out ${
-          showContainer ? "translate-y-0" : "-translate-y-full"
+        className={`fixed z-[100] top-0 w-full h-[55px] transition-transform transform duration-500 ease-out ${
+          showContainer ? "translate-y-0" : "-translate-y-[65px]"
         }`}
       >
         <div

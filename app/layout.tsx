@@ -53,9 +53,7 @@ export default async function RootLayout({
           }}
         ></script>
       </head>
-      <body
-        className={`${poppins.className} flex flex-col items-center select-none`}
-      >
+      <body className={`${poppins.className} flex flex-col items-center`}>
         {children}
         <div id="contact"></div>
         <div className="bg-white w-full flex justify-center">
