@@ -33,7 +33,9 @@ export default async function Home() {
       <div id="home"></div>
       <Banner data={bannerDataContent} />
       <JoinCommunity data={joinCommunityDataContent} />
-      <Sugcon data={sugconDataContent} />
+      <div className="bg-[#111314] w-full flex justify-center">
+        <Sugcon data={sugconDataContent} />
+      </div>
       <SugconCommunity data={sugconCommunityDataContent} />
       <div id="events"></div>
       <Events data={eventsDataContent} />

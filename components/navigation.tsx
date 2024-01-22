@@ -54,15 +54,16 @@ export default function Navigation({ data }: NavigationProps) {
 
       <div
         className={`fixed z-[100] top-0 w-full h-[55px] transition-transform transform duration-500 ease-out ${
-          showContainer ? "translate-y-0" : "-translate-y-[65px]"
+          showContainer ? "translate-y-0" : "-translate-y-[85px]"
         }`}
       >
         <div
-          className={`p-4 bg-[#212529] text-white flex justify-center items-center`}
+          className={`py-4 px-4 md:px-[40px] bg-[#212529] text-white flex justify-center items-center`}
         >
           <div className="max-w-[1440px] w-full flex items-center justify-between gap-[10px]">
             <Image
-              src={"/imgs/sugcon-ph.png"}
+              src={"/svgs/sugcon-ph-white.svg"}
+              className="w-[226px] h-[45px]"
               alt={""}
               width={226}
               height={45}

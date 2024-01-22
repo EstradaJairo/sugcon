@@ -12,7 +12,13 @@ export default function Navbar({ data }: NavbarProps) {
         {data[0].text}
       </p>
       <div className="bg-[#212529] w-full lg:h-[135px] p-[20px] lg:p-[40px] flex flex-col items-center justify-between gap-[50px] sm:flex-row">
-        <Image src={data[0].logo} alt={""} width={226} height={45} />
+        <Image
+          src={data[0].logo}
+          className="w-[226px] h-[45px]"
+          alt={""}
+          width={226}
+          height={45}
+        />
 
         <div className="flex items-center justify-center sm:justify-end gap-[25px] w-full">
           {data[0].partners.map((src, index) => (

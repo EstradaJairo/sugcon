@@ -60,28 +60,32 @@ export default function Events({ data }: EventsProps) {
             {data[0].upcomingEvent}
           </p>
         </div>
-        <Image
+        <div className="w-full backgroundImageEvents h-[361px]">
+          <div className="backgroundShadow flex items-end h-full">
+            <div className=" text-[16px] flex flex-col lg:flex-row items-center justify-center gap-[25px] w-full h-fit p-[25px]">
+              <div className="flex flex-col sm:flex-row items-center gap-[11px]">
+                <p>{data[0].tag}</p>
+                <div className="bg-[#D91E27] h-[2px] w-full sm:h-[34px] sm:w-[4px]"></div>
+                <p>{data[0].location}</p>
+              </div>
+              <div
+                onClick={() => {
+                  emailModal(true);
+                }}
+                className="px-[15px] sm:px-[50px] py-[15px] border border-white rounded-[5px] font-medium text-[14px] bg-[#D91E27] lg:cursor-pointer text-center"
+              >
+                {data[0].waitlistLabel}
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* <Image
           src={data[0].eventSrc}
           alt={""}
           width={1182}
           height={400}
           className="object-cover object-center w-full h-[400px]"
-        />
-        <div className="bg-[#212529] text-[16px] flex flex-col lg:flex-row items-center justify-center gap-[25px] w-full p-[15px]">
-          <div className="flex flex-col sm:flex-row items-center gap-[11px]">
-            <p>{data[0].tag}</p>
-            <div className="bg-[#D91E27] h-[2px] w-full sm:h-[34px] sm:w-[4px]"></div>
-            <p>{data[0].location}</p>
-          </div>
-          <div
-            onClick={() => {
-              emailModal(true);
-            }}
-            className="px-[15px] sm:px-[50px] py-[15px] border border-white rounded-[5px] font-medium text-[14px] bg-[#D91E27] lg:cursor-pointer text-center"
-          >
-            {data[0].waitlistLabel}
-          </div>
-        </div>
+        /> */}
       </div>
 
       <div

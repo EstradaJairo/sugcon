@@ -10,10 +10,6 @@ const poppins = Poppins({
   weight: "700",
 });
 
-// interface ExtendedWindow extends Window {
-//   fd: (type: string, options: any) => void;
-// }
-
 interface SugconCommunityProps {
   data: SugconCommunity[];
 }
@@ -21,25 +17,6 @@ interface SugconCommunityProps {
 export default function SugconCommunity({ data }: SugconCommunityProps) {
   const [openSpeakerModal, setOpenSpeakerModal] = useState(false);
   const [openSponsorModal, setOpenSponsorModal] = useState(false);
-
-  // const speakerModal = (isOpen: boolean) => {
-  //   setOpenSpeakerModal(isOpen);
-  //   (window as unknown as ExtendedWindow).fd("form", {
-  //     formId: "6585391ed438be5a628a8a9d",
-  //     containerEl: "#fd-form-6585391ed438be5a628a8a9d",
-  //   });
-  // };
-
-  // const sponsorModal = (isOpen: boolean) => {
-  //   setOpenSponsorModal(isOpen);
-  //   (window as unknown as ExtendedWindow).fd("form", {
-  //     formId: "65853aa7c24bb9aa39c2888c",
-  //     containerEl: "#fd-form-65853aa7c24bb9aa39c2888c",
-  //   });
-  // };
-  const onNavigate = (url: string) => {
-    return window.open(url, "_blank");
-  };
 
   return (
     <>
@@ -62,7 +39,7 @@ export default function SugconCommunity({ data }: SugconCommunityProps) {
           {data[0].welcomePhrase.map((phrase, index) => (
             <div
               key={index}
-              className="bg-[#212529] border border-[#C5F1E3] rounded-[4px] text-[16px] sm:text-[20px] px-[14px] py-[20px] text-center sm:text-start"
+              className="bg-[#2125294D] border-b border-[#C5F1E3] text-[16px] sm:text-[20px] px-[14px] py-[20px] text-center sm:text-start"
             >
               <p>{phrase}</p>
             </div>
@@ -78,7 +55,6 @@ export default function SugconCommunity({ data }: SugconCommunityProps) {
             <div
               onClick={() => {
                 setOpenSpeakerModal(true);
-                // onNavigate(data[0].speakerURL);
               }}
               className="bg-[#212529] text-[12px] sm:text-[18px] font-bold px-[23px] py-[10px] rounded-[5px] lg:cursor-pointer"
             >
@@ -87,7 +63,6 @@ export default function SugconCommunity({ data }: SugconCommunityProps) {
             <div
               onClick={() => {
                 setOpenSponsorModal(true);
-                // onNavigate(data[0].sponsorURL);
               }}
               className="bg-[#212529] text-[12px] sm:text-[18px] font-bold px-[23px] py-[10px] rounded-[5px] lg:cursor-pointer"
             >
@@ -142,23 +117,6 @@ export default function SugconCommunity({ data }: SugconCommunityProps) {
           />
         </div>
       </div>
-
-      {/* <div
-        className={`${
-          openSponsorModal ? "flex" : "hidden"
-        } fixed px-[30px] inset-0 z-50 flex items-center justify-center backdrop-blur-[5px] `}
-      >
-        <div className="relative" id="fd-form-65853aa7c24bb9aa39c2888c">
-          <X
-            onClick={() => setOpenSponsorModal(false)}
-            width={20}
-            height={20}
-            className={`absolute z-[1]  right-[20px] top-[20px] lg:cursor-pointer ${
-              openSponsorModal ? "flex" : "hidden"
-            }`}
-          />
-        </div>
-      </div> */}
     </>
   );
 }

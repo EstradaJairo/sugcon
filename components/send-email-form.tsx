@@ -117,12 +117,9 @@ export default function SendEmailForm({
     <>
       <form
         onSubmit={handleSubmit}
-        className="flex w-full flex-col lg:flex-row gap-[20px] items-center justify-center"
+        className="flex w-full flex-col lg:flex-row gap-[20px] items-start justify-center"
       >
         <div className="flex w-full lg:w-fit flex-col gap-[5px] h-[82px]">
-          <label className="text-[10px]" htmlFor="firstName">
-            First Name
-          </label>
           <input
             type="text"
             placeholder="First Name"
@@ -142,9 +139,6 @@ export default function SendEmailForm({
         </div>
 
         <div className="flex w-full lg:w-fit flex-col gap-[5px] h-[82px]">
-          <label className="text-[10px]" htmlFor="lastName">
-            Last Name
-          </label>
           <input
             type="text"
             placeholder="Last Name"
@@ -164,9 +158,6 @@ export default function SendEmailForm({
         </div>
 
         <div className="flex w-full lg:w-fit flex-col gap-[5px] h-[82px]">
-          <label className="text-[10px]" htmlFor="emailAddress">
-            Email Address
-          </label>
           <input
             type="text"
             placeholder="Email Address"

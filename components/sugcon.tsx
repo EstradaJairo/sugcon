@@ -16,12 +16,12 @@ export default function Sugcon({ data }: SugconProps) {
     <>
       <div
         id="about"
-        className="w-full px-[37px] py-[30px] bg-[#212529] flex flex-col  xl:flex-row xl:justify-between gap-[20px]"
+        className="w-full max-w-[1330px] px-[37px] py-[30px] flex flex-col  xl:flex-row xl:justify-between gap-[20px]"
       >
         <div className="xl:max-w-[573px] w-full flex flex-col gap-[14px]">
           <div className="flex flex-col gap-[29px]">
             <p
-              className={`px-[9px] py-[7px] text-[25px] text-center sm:text-[45px] bg-[#0A0A0B] max-w-[490px] w-full ${poppins.className}`}
+              className={`px-[9px] py-[7px] text-[25px] text-center lg:text-start sm:text-[45px] w-full ${poppins.className}`}
             >
               {data[0].titleLabel}
             </p>
