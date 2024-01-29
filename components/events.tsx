@@ -48,31 +48,31 @@ export default function Events({ data }: EventsProps) {
 
   return (
     <>
-      <div className="mt-[78px] w-full px-[20px] md:px-[55px] text-center">
+      <div className="mt-[78px] w-full md:px-[55px] text-center">
         <div className="flex flex-col lg:flex-row gap-[5px] lg:gap-[20px] w-full justify-center items-center pb-[30px] lg:pb-[14px]">
           <p className={`text-[25px] sm:text-[40px] ${poppins.className}`}>
             {data[0].title}
           </p>
 
           <p
-            className={`px-[22px] py-[5px] bg-[#D91E27] text-[16px] sm:text-[20px] ${poppins.className}`}
+            className={`px-[22px] py-[5px] bg-[#D91E27] text-[20px] ${poppins.className}`}
           >
             {data[0].upcomingEvent}
           </p>
         </div>
         <div className="w-full backgroundImageEvents h-[361px]">
           <div className="backgroundShadow flex items-end h-full">
-            <div className=" text-[16px] flex flex-col lg:flex-row items-center justify-center gap-[25px] w-full h-fit p-[25px]">
-              <div className="flex flex-col sm:flex-row items-center gap-[11px]">
+            <div className="text-[10px] md:text-[16px] flex flex-col lg:flex-row items-center justify-center gap-[25px] w-full h-fit p-[25px]">
+              <div className="flex  items-center gap-[6px] md:gap-[11px]">
                 <p>{data[0].tag}</p>
-                <div className="bg-[#D91E27] h-[2px] w-full sm:h-[34px] sm:w-[4px]"></div>
+                <div className="bg-[#D91E27] h-[20px] w-[2px] md:h-[34px] md:w-[4px]"></div>
                 <p>{data[0].location}</p>
               </div>
               <div
                 onClick={() => {
                   emailModal(true);
                 }}
-                className="px-[15px] sm:px-[50px] py-[15px] border border-white rounded-[5px] font-medium text-[14px] bg-[#D91E27] lg:cursor-pointer text-center"
+                className="px-[28px] md:px-[50px] py-[8px] md:py-[15px] md:border md:border-white rounded-[2px] md:rounded-[5px] font-medium text-[8px] md:text-[14px] bg-[#D91E27] lg:cursor-pointer text-center"
               >
                 {data[0].waitlistLabel}
               </div>
@@ -135,12 +135,12 @@ export default function Events({ data }: EventsProps) {
             </span>
           ))}
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-[12px] xl:grid-cols-4 justify-center items-center mb-[121px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-[27px] md:gap-[12px] xl:grid-cols-4 justify-center items-center mb-[121px]">
           {data[0].events.map((event, index) => (
             <div className="flex items-center gap-[12px]" key={index}>
               <div
                 onClick={() => onNavigate(event.link)}
-                className="lg:cursor-pointer py-[12px] px-[19px] bg-[#212529] flex items-center gap-[12px] rounded-[5px] h-[72px]"
+                className="lg:cursor-pointer py-[12px] px-[19px] flex items-center gap-[12px] rounded-[5px] h-[72px]"
               >
                 <div className="bg-[#EB1F1F] w-[48px] h-[48px] flex items-center justify-center rounded-[5px]">
                   <Image src={event.src} alt={""} width={29} height={28} />

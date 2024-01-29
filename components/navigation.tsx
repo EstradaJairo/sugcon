@@ -43,15 +43,19 @@ export default function Navigation({ data }: NavigationProps) {
     <>
       <div
         id="navigation"
-        className="w-full bg-[#0a0b0b] py-[12px] px-[20px] sm:px-[40px] text-[18px] flex flex-col sm:flex-row sm:items-center justify-center gap-[20px] lg:gap-[50px]"
+        className="w-full bg-[#0a0b0b] py-[12px] px-[20px] sm:px-[40px] text-[18px] hidden md:flex flex-col sm:flex-row sm:items-center justify-center gap-[20px] lg:gap-[50px]"
       >
         {data.map((navigation, index) => (
-          <p onClick={() => onNavigate(navigation.link)} key={index}>
+          <p
+            className="lg:cursor-pointer"
+            onClick={() => onNavigate(navigation.link)}
+            key={index}
+          >
             {navigation.title}
           </p>
         ))}
       </div>
-
+      {/* 
       <div
         className={`fixed z-[100] top-0 w-full h-[55px] transition-transform transform duration-500 ease-out ${
           showContainer ? "translate-y-0" : "-translate-y-[85px]"
@@ -110,7 +114,7 @@ export default function Navigation({ data }: NavigationProps) {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 }

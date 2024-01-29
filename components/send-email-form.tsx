@@ -117,7 +117,7 @@ export default function SendEmailForm({
     <>
       <form
         onSubmit={handleSubmit}
-        className="flex w-full flex-col lg:flex-row gap-[20px] items-start justify-center"
+        className="flex w-full flex-col lg:flex-row lg:gap-[20px] items-center lg:items-start justify-center"
       >
         <div className="flex w-full lg:w-fit flex-col gap-[5px] h-[82px]">
           <input

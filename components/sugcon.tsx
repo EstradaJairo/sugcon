@@ -16,27 +16,27 @@ export default function Sugcon({ data }: SugconProps) {
     <>
       <div
         id="about"
-        className="w-full max-w-[1330px] px-[37px] py-[30px] flex flex-col  xl:flex-row xl:justify-between gap-[20px]"
+        className="w-full  px-[10px] py-[12px] md:px-[37px] md:py-[30px] flex flex-col-reverse  xl:flex-row xl:justify-between gap-[50px]"
       >
-        <div className="xl:max-w-[573px] w-full flex flex-col gap-[14px]">
-          <div className="flex flex-col gap-[29px]">
-            <p
-              className={`px-[9px] py-[7px] text-[25px] text-center lg:text-start sm:text-[45px] w-full ${poppins.className}`}
-            >
-              {data[0].titleLabel}
-            </p>
-            <p className={`${poppins.className} text-[18px] sm:text-[25px] `}>
-              {data[0].title}
-            </p>
-            <p
-              className={`text-[16px] sm:text-[20px] font-medium leading-[157.523%] text-justify`}
-            >
-              {data[0].desc}
-            </p>
+        <div className=" w-full flex flex-col gap-[14px]">
+          <div className="px-[33px] md:px-[0px]">
+            <div className="flex flex-col items-center lg:items-start mb-[14px]">
+              <p
+                className={` text-[25px] text-center lg:text-start sm:text-[45px] w-full mb-[5px] ${poppins.className}`}
+              >
+                {data[0].titleLabel}
+              </p>
+              <p className={` text-[8px] sm:text-[25px]`}>{data[0].title}</p>
+              <p
+                className={`text-[10px] sm:text-[20px] font-medium leading-[157.523%] text-justify mt-[19px] text-[#FFFFFF99]`}
+              >
+                {data[0].desc}
+              </p>
+            </div>
+            <div className="bg-[#757575] rounded-[36px] w-full h-[1px]"></div>
           </div>
-          <div className="bg-[#757575] rounded-[36px] w-full h-[1px]"></div>
           <div
-            className={`bg-[#D91E27] text-[18px] sm:text-[25px] px-[8px] py-[7px] ${poppins.className}`}
+            className={`bg-[#D91E27] text-center md:text-start font-bold text-[16px] sm:text-[25px] md:text-[32px] px-[18px] py-[16px] md:px-[8px] md:py-[7px] ${poppins.className}`}
           >
             {data[0].tag}
           </div>
