@@ -86,7 +86,10 @@ export default function Sponsor() {
       email: String(e.target.email.value),
       phone: String(e.target.phone.value),
       interest: selectedItemInterest,
-      hear: selectedItemHear,
+      hear:
+        selectedItemHear === "Others:"
+          ? String(e.target.others.value)
+          : selectedItemHear,
     };
 
     if (
@@ -303,7 +306,13 @@ export default function Sponsor() {
                       <div className="flex items-center gap-[10px]">
                         <p className="text-[7.5px] md:text-[15px]">{item}</p>
                         {item === "Others:" && (
-                          <input className="text-[7.5px] md:text-[15px] border-b-[1px] border-[#55535399] bg-transparent w-full px-[10px] py-[5px]" />
+                          <input
+                            type="text"
+                            autoComplete="off"
+                            name={"others"}
+                            onChange={handleInputChange}
+                            className="text-[7.5px] md:text-[15px] border-b-[1px] border-[#55535399] bg-transparent w-full px-[10px] py-[5px]"
+                          />
                         )}
                       </div>
                     </div>
@@ -317,7 +326,7 @@ export default function Sponsor() {
             <button
               type="submit"
               onClick={handleSendEmail}
-              className="bg-[#D91E27] py-[10px] px-[32px] md:px-[65px] md:py-[22px] text-center rounded-[4px] text-[9.409px] md:ext-[18px] font-semibold text-white flex items-center justify-center w-[98.38px] h-[35.755px] md:w-[194px] md:h-[71px]"
+              className="bg-[#D91E27] py-[10px] px-[32px] md:px-[65px] md:py-[22px] text-center rounded-[4px] text-[9.409px] md:text-[18px] font-semibold text-white flex items-center justify-center w-[98.38px] h-[35.755px] md:w-[194px] md:h-[71px]"
             >
               {isLoading ? (
                 <Loader className="animate-spin h-[20px] w-[20px] text-white" />

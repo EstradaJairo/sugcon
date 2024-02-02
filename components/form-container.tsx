@@ -23,7 +23,7 @@ export default function FormContainer() {
       <div className="flex gap-[35px] text-[16px] font-medium w-full justify-center p-[20px]">
         <p
           className={`lg:cursor-pointer ${
-            selectedOption === "speaker" ? "text-[#FFFFFF4D]" : "text-white"
+            selectedOption === "speaker" ? "text-white" : "text-[#FFFFFF4D]"
           }`}
           onClick={() => {
             handleOptionClick("speaker");
@@ -34,7 +34,7 @@ export default function FormContainer() {
         </p>
         <p
           className={`lg:cursor-pointer ${
-            selectedOption === "sponsor" ? "text-[#FFFFFF4D]" : "text-white"
+            selectedOption === "sponsor" ? "text-white" : "text-[#FFFFFF4D]"
           }`}
           onClick={() => {
             handleOptionClick("sponsor");

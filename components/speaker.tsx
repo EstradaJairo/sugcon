@@ -155,7 +155,10 @@ export default function Speaker() {
       phone: String(e.target.phone.value),
       plan: String(e.target.plan.value),
       sypnosis: String(e.target.sypnosis.value),
-      hear: selectedItem,
+      hear:
+        selectedItem === "Others:"
+          ? String(e.target.others.value)
+          : selectedItem,
     };
 
     if (
@@ -205,37 +208,43 @@ export default function Speaker() {
 
   return (
     <>
-      <div className="flex gap-[31px]">
-        <div className="px-[45px] py-[70px] bg-[#F6F5F5] max-w-[1440px] w-full">
+      <div className="flex flex-col-reverse gap-[7px] lg:flex-row lg:gap-[31px]">
+        <div className="px-[22px] py-[34px] lg:px-[45px] lg:py-[70px] rounded-[3px] lg:rounded-none bg-[#F6F5F5] max-w-[1440px] w-full">
           <div className="">
-            <p className="text-[42.642px] font-semibold tracking-[8.528px]">
+            <p className="text-[21px] md:text-[42.642px] font-semibold tracking-[8.528px]">
               SUG<span className="text-[#D91E27]">CON</span> PH
             </p>
             <div className="flex gap-[20px] items-center">
-              <p className="bg-[#D91E27] text-[16.616px] px-[14px] py-[3px] text-white rounded-[3.5px] w-fit">
+              <p className="bg-[#D91E27] text-[8px] md:text-[16.616px] px-[14px] py-[3px] text-white rounded-[3.5px] w-fit">
                 <span className="font-semibold">{speaker[0].role}</span>{" "}
                 REGISTRATION FORM
               </p>
               <div className="bg-[#D91E27] max-w-[176.523px] w-full h-[2px]"></div>
             </div>
           </div>
-          <p className="text-[18.783px] font-medium leading-[32.03px] max-w-[517.479px] w-full text-justify mt-[33px]">
+          <p className="text-[9px] md:text-[18.783px] font-medium md:leading-[32.03px] max-w-[517.479px] w-full text-justify mt-[16px] md:mt-[33px]">
             {speaker[0].desc}
           </p>
           <div className="mt-[40px] flex flex-col gap-[50px]">
-            <form className="flex flex-col gap-[50px]" onSubmit={handleSubmit}>
-              <div className="flex flex-col gap-[30px]">
+            <form
+              className="flex flex-col gap-[30px] md:gap-[50px]"
+              onSubmit={handleSubmit}
+            >
+              <div className="flex flex-col gap-[15px] md:gap-[30px]">
                 {speaker[0].inputFieldsWithQuestion.map((item, index) => (
-                  <div key={index} className="flex flex-col gap-[5px]">
-                    <div className="leading-[23px]">
+                  <div
+                    key={index}
+                    className="flex flex-col gap-[5px] text-[7.5px] md:text-[15px]"
+                  >
+                    <div className="md:leading-[23px]">
                       <p className="font-medium">{item.question}</p>
                       <p className="text-[#757575]">{item.label}</p>
                     </div>
-                    <div className="h-[88px] flex flex-col gap-[6px]">
+                    <div className=" flex flex-col gap-[6px]">
                       <input
                         type="text"
                         placeholder={item.placeholder}
-                        className={`px-[26px] py-[20px] placeholder:text-[#55535399] text-[18.769px] font-medium rounded-[6px] h-[63.209px] max-w-[395.422px] w-full ${
+                        className={`px-[13px] py-[10px] md:px-[26px] md:py-[20px] placeholder:text-[#55535399] text-[9px] md:text-[18.769px] font-medium rounded-[6px] h-[31.667px] md:h-[63.209px] max-w-[395.422px] w-full ${
                           errors[item.name as keyof typeof errors]
                             ? "border border-red-700"
                             : "border border-[#55535399]"
@@ -247,7 +256,7 @@ export default function Speaker() {
                       />
                       {errors[item.name as keyof typeof errors] && (
                         <label
-                          className="text-[15px] text-[#FF5050] h-[22px]"
+                          className="text-[7.5px] md:text-[15px] text-[#FF5050] md:h-[22px]"
                           htmlFor={item.name}
                         >
                           {item.validationLabel}
@@ -258,25 +267,27 @@ export default function Speaker() {
                 ))}
               </div>
 
-              <div className="flex flex-col gap-[15px]">
+              <div className="flex flex-col gap-[15px] text-[7.5px] md:text-[15px]">
                 {speaker[0].inputFields.map((field, index) => (
-                  <div className=" flex flex-col" key={index}>
-                    <label
-                      className="text-[15px] font-medium mb-[5px] h-[22px]"
-                      htmlFor={field.name}
-                    >
-                      {field.title}
-                    </label>
-                    <label
-                      className="text-[15px] text-[#757575] mb-[5px]"
-                      htmlFor={field.name}
-                    >
-                      {field?.label}
-                    </label>
+                  <div className=" flex flex-col gap-[5px]" key={index}>
+                    <div className="flex flex-col">
+                      <label
+                        className=" font-medium md:mb-[5px] md:h-[22px]"
+                        htmlFor={field.name}
+                      >
+                        {field.title}
+                      </label>
+                      <label
+                        className=" text-[#757575] md:mb-[5px]"
+                        htmlFor={field.name}
+                      >
+                        {field?.label}
+                      </label>
+                    </div>
                     <input
                       type="text"
                       placeholder={field.placeholder}
-                      className={`px-[26px] py-[20px] placeholder:text-[#55535399] text-[18.769px] font-medium rounded-[6px] h-[63.209px] max-w-[395.422px] w-full ${
+                      className={`px-[13px] py-[10px] md:px-[26px] md:py-[20px] placeholder:text-[#55535399] text-[9px] md:text-[18.769px] font-medium rounded-[6px] h-[31.667px] md:h-[63.209px] max-w-[395.422px] w-full ${
                         errors[field.name as keyof typeof errors]
                           ? "border border-red-700"
                           : "border border-[#55535399]"
@@ -287,7 +298,7 @@ export default function Speaker() {
                       onChange={handleInputChange}
                     />
                     <label
-                      className="text-[15px] text-[#FF5050] mt-[5px] h-[22px]"
+                      className=" text-[#FF5050] md:mt-[5px] md:h-[22px]"
                       htmlFor={field.name}
                     >
                       {errors[field.name as keyof typeof errors] && (
@@ -301,9 +312,9 @@ export default function Speaker() {
                 ))}
               </div>
 
-              <div className="flex flex-col gap-[10px] mb-[54px]">
+              <div className="flex flex-col gap-[10px] mb-[25px] md:mb-[54px]">
                 <div>
-                  <p className={`text-[18.783px] font-medium`}>
+                  <p className={`text-[9px] md:text-[18.783px] font-medium`}>
                     {speaker[0].questions[0]}
                   </p>
                 </div>
@@ -313,21 +324,27 @@ export default function Speaker() {
                       <div className="flex items-center gap-[5px]" key={index}>
                         <div
                           onClick={() => handleToggle(item)}
-                          className="w-[20px] h-[20px] border border-black p-[2px] flex items-center justify-center rounded-full lg:cursor-pointer"
+                          className="w-[11px] h-[11px] md:w-[20px] md:h-[20px] border border-black p-[2px] flex items-center justify-center rounded-full lg:cursor-pointer"
                         >
                           {selectedItem === item && (
-                            <div className="w-[10px] h-[10px] bg-black rounded-full"></div>
+                            <div className="w-[5px] h-[5px] md:w-[10px] md:h-[10px] bg-black rounded-full"></div>
                           )}
                         </div>
                         <div className="flex items-center gap-[10px]">
                           <p className="text-[7.5px] md:text-[15px]">{item}</p>
                           {item === "Others:" && (
-                            <input className="text-[7.5px] md:text-[15px] border-b-[1px] border-[#55535399] bg-transparent w-full px-[10px] py-[5px]" />
+                            <input
+                              type="text"
+                              autoComplete="off"
+                              name={"others"}
+                              onChange={handleInputChange}
+                              className="text-[7.5px] md:text-[15px] border-b-[1px] border-[#55535399] bg-transparent w-full px-[10px] py-[5px]"
+                            />
                           )}
                         </div>
                       </div>
                     ))}
-                    <p className="text-[#FF5050] h-[24px]">
+                    <p className="text-[#FF5050] text-[7.5px] md:text-[15px] md:h-[24px]">
                       {hearAboutUs && <span>Please select one.</span>}
                     </p>
                   </>
@@ -336,7 +353,7 @@ export default function Speaker() {
               <button
                 type="submit"
                 onClick={handleSendEmail}
-                className="bg-[#D91E27] flex items-center justify-center px-[65px] py-[22px]  rounded-[4px] text-[18px] font-semibold text-white w-[194px] h-[71px]"
+                className="bg-[#D91E27] py-[10px] px-[32px] md:px-[65px] md:py-[22px] text-center rounded-[4px] text-[9.409px] md:text-[18px] font-semibold text-white flex items-center justify-center w-[98.38px] h-[35.755px] md:w-[194px] md:h-[71px]"
               >
                 {isLoading ? (
                   <Loader className="animate-spin h-[20px] w-[20px] text-white" />
@@ -347,12 +364,27 @@ export default function Speaker() {
             </form>
           </div>
         </div>
-        <div className="relative z-0 backgroundImage max-w-[485px] w-full ">
+        <div className="hidden lg:flex relative z-0 backgroundImage w-full max-w-[485px]">
           <div className="bg-black opacity-[0.7] w-full h-full"></div>
           <div className="bg-[#D91E27] absolute top-[-29px] right-[-29px] px-[39px] py-[22px] text-[18px] font-semibold text-white text-center w-fit rounded-[4px]">
             Be a speaker
           </div>
         </div>
+
+        <div className="relative z-0">
+          <div className="flex lg:hidden justify-center backgroundImage h-[133px] w-full">
+            <div className="bg-black opacity-[0.7] w-full h-full"></div>
+            <div className="bg-[#D91E27] absolute top-[-10px] px-[27px] py-[15px] text-[13px] font-semibold text-white text-center w-fit rounded-[4px]">
+              Be a speaker
+            </div>
+          </div>
+        </div>
+        {/* <div className="relative z-0 backgroundImage max-w-[485px] w-full ">
+          <div className="bg-black opacity-[0.7] w-full h-full"></div>
+          <div className="bg-[#D91E27] absolute top-[-29px] right-[-29px] px-[39px] py-[22px] text-[18px] font-semibold text-white text-center w-fit rounded-[4px]">
+            Be a speaker
+          </div>
+        </div> */}
       </div>
       <Toast
         erroMsg="Something went wrong."
