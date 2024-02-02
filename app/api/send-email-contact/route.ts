@@ -1,3 +1,5 @@
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 

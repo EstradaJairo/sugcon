@@ -100,7 +100,7 @@ export default function Sponsor() {
       data.interest != "" &&
       data.hear != ""
     ) {
-      const response = await fetch("/api/send-email-sponsor", {
+      const response = await fetch("/send-email-sponsor", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -170,7 +170,7 @@ export default function Speaker() {
       data.sypnosis != "" &&
       data.hear != ""
     ) {
-      const response = await fetch("/api/send-email-speaker", {
+      const response = await fetch("/send-email-speaker", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
