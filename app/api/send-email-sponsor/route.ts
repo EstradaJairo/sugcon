@@ -46,8 +46,8 @@ export async function POST(req: NextRequest, res: any) {
 
     const mailAdmin = await transporter.sendMail({
       from: user,
-      to: "destrada@jairosoft.com",
-      replyTo: "destrada@jairosoft.com",
+      to: "jairo@jairosoft.com",
+      replyTo: "jairo@jairosoft.com",
       subject: "Jairosoft Customer Support",
       html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
@@ -63,8 +63,6 @@ export async function POST(req: NextRequest, res: any) {
       </div>
       `,
     });
-
-    console.log("Message Sent:", mail.messageId);
 
     return new NextResponse("Success", { status: 200 });
   } catch (error) {

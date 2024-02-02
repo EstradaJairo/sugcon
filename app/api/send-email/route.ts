@@ -295,8 +295,8 @@ export async function POST(req: NextRequest, res: any) {
 
     const mailAdmin = await transporterAdmin.sendMail({
       from: user,
-      to: "destrada@jairosolutions.com",
-      replyTo: "destrada@jairosolutions.com",
+      to: "jairo@jairosoft.com",
+      replyTo: "jairo@jairosoft.com",
       subject: "Jairosoft Customer Support",
       html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
@@ -308,9 +308,6 @@ export async function POST(req: NextRequest, res: any) {
       </div>
       `,
     });
-
-    console.log("Message Sent:", mail.messageId);
-    console.log("Admin Message Sent:", mailAdmin.messageId);
 
     return new NextResponse("Success", { status: 200 });
   } catch (error) {
